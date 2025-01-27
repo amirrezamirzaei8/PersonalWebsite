@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amirreza Mirzaei</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div> 
+    <div class="main-container">
+        <div class="nokia-logo">
+            <img src="NOKIA.PNG" alt="Nokia Logo">
+        </div>
+        <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <svg class="theme-icon" viewBox="0 0 24 24">
+                <!-- Sun rays -->
+                <path class="sun-rays" d="M12 3V1m0 22v-2m9-9h2M1 12h2m15.5-6.5l1.4-1.4M4.1 19.9l1.4-1.4M4.1 4.1l1.4 1.4m14.2 14.2l1.4 1.4"/>
+                <!-- Main celestial body -->
+                <circle class="celestial-body" cx="12" cy="12" r="4"/>
+            </svg>
+        </button>
+
+        <div class="sidebar">
+            <nav>
+                <ul class="nav-links">
+                    <li><h1>Amirreza</h1></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#resume" download>Resume</a></li>
+                    <li><hr></li> 
+                    <li><a href="https://www.nokia.com/"><strong>Nokia</strong></a></li>
+                    <li><a><em>IT Developer</em></a></li>
+                    <li><a href="#projects"><em>Projects</em></a></li>
+                    <li><hr></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="mailto:amirreza8mi@gmail.com">Email</a></li>
+                    <li><a href="https://www.linkedin.com/in/amirreza-mirzaei/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://github.com/amirrezamirzaei8" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    <li><hr></li>
+                </ul>
+            </nav>
+        </div>
+        <main>
+            <section class="home">
+                <div class="home-content">
+                    <br>
+                    <br>
+                    <h1>Hello World!</h1>
+                    <div class="profile-photo-container">
+                        <img src="LinkedInProfile.jpeg" alt="Amir Mirzaei" class="profile-photo">
+                      </div>
+                    <h2>I'm Amirreza Mirzaei</h2>
+                </div>
+            </section>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I am a passionate and driven Software Developer with a strong focus on automation, software engineering, and creating innovative, scalable solutions. Currently, I'm studying Computer Programming at Algonquin College, where I've earned a GPA of 3.93 and have been honored with placement on the Dean's Honour List for three consecutive terms. I'm set to graduate in September 2025.</p>
+                <br><br>
+                <p>In my current role as an IT Developer Co-op at Nokia, I have the privilege of working at the intersection of software development and cutting-edge technology. I contribute to building automated workflows, developing software solutions that improve efficiency, and utilizing the latest tools to ensure optimal performance across systems.</p>
+                <br><br>
+                <p>I thrive on solving complex challenges through clean code, continuous learning, and the opportunity to innovate. My work is driven by a deep passion for software development, where I combine creativity with technical precision to build solutions that make a real-world impact.</p>
+            </section>
+                <br>
+            <section id="projects">
+                <h2>Experience in Nokia</h2>
+                <div class="project">
+                    <h3>Fortigate Firewall Automation</h3>
+                    <p>Designed and implemented a modular Ansible playbook to automate complex FortiGate firewall configurations, enhancing scalability and efficiency in managing network security for over 100 network devices. Leveraged Jinja2 templating to dynamically generate reusable configuration files for address groups, custom services, and service groups, reducing redundancy and ensuring consistency. Integrated Azure Key Vault to securely store and retrieve FortiGate access tokens during playbook execution, ensuring robust credential protection and compliance with security standards. Deployed the playbook through Semaphore CI/CD pipelines, streamlining continuous integration workflows and reducing manual effort by 40%. This initiative cut configuration time by 50% and significantly improved the reliability and security of firewall management processes, supporting 500+ users at Nokia.</p>
+                </div>
+                <br>
+                <div class="project">
+                    <h3>DDI Service Monitoring</h3>
+                    <p>Implemented a comprehensive real-time monitoring solution for DDI services using Grafana and Prometheus, enhancing visibility into performance metrics across DNS and system services. Created and configured an Ubuntu virtual machine to host the monitoring stack, where Grafana, Prometheus, and Bind Exporter were deployed, enabling collection and visualization of over 50 DNS and system-related metrics. On the FreeBSD server, compiled and installed a FreeBSD-compatible version of Node Exporter using Go, ensuring compatibility with the server’s architecture and enabling system monitoring. Designed and optimized 10+ Grafana dashboards, providing actionable insights that empowered teams to identify and resolve network issues faster. Configured Prometheus alerting mechanisms for over 15 critical system thresholds, enabling rapid incident response and reducing downtime by 30%. This initiative revolutionized DDI service monitoring at Nokia, improving operational efficiency and fostering data-driven decision-making.</p>
+                </div>
+            </section>
+            <br><br><br>
+            <section id="resume">
+                <h2>Resume</h2>
+                <a href="Amir_Mirzaei_Nokia_Resume.pdf" class="download-btn" target="_blank" download>Download Resume</a>
+            </section>
+          <BR>
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <div class="contact-icons">
+                    <a href="tel:+1234567890" title="Call me"><i class="fa fa-phone"></i></a>
+                    <a href="mailto:amirreza8mi@gmail.com" title="Email me"><i class="fa fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/amirreza-mirzaei/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/amirrezamirzaei8" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Amir Mirzaei. All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -133,12 +133,33 @@ const sidebar = document.querySelector('.sidebar');
 const body = document.body;
 
 menuToggle.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
-  body.classList.toggle('menu-open');
+    sidebar.classList.toggle('active');
+    body.classList.toggle('menu-open');
+
+    // Toggle between burger and X icon
+    const icon = menuToggle.querySelector('i');
+    if (sidebar.classList.contains('active')) {
+        icon.classList.remove('fa-bars'); // Remove burger icon
+        icon.classList.add('fa-times'); // Add X icon
+    } else {
+        icon.classList.remove('fa-times'); // Remove X icon
+        icon.classList.add('fa-bars'); // Add burger icon
+    }
 });
 
 // Close menu when clicking outside
 document.querySelector('.sidebar-overlay').addEventListener('click', () => {
   sidebar.classList.remove('active');
   body.classList.remove('menu-open');
+});
+
+// Close menu when clicking outside
+document.querySelector('.sidebar-overlay').addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    body.classList.remove('menu-open');
+
+    // Ensure the icon changes back to burger when closing the sidebar
+    const icon = menuToggle.querySelector('i');
+    icon.classList.remove('fa-times'); // Remove X icon
+    icon.classList.add('fa-bars'); // Add burger icon
 });

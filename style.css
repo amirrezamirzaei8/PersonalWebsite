@@ -349,7 +349,7 @@ footer {
   }
 
 .contact-icons a {
-    margin: 0 10px;
+    margin: 0 35px;
     color: #005AFF;
     font-size: 24px;
     transition: all 0.3s ease;
@@ -683,10 +683,11 @@ body.dark-mode hr::after {
       }
     
       /* Prevent body scrolling when menu is open */
-      body.menu-open {
-        overflow: hidden;
+      body.menu-open .sidebar-overlay{
+        overflow: block;
     }
 
+    
     main {
       margin-left: 0;
       padding: 20px;

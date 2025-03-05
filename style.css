@@ -308,9 +308,15 @@ footer {
     font-size: 18px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure it spans full width */
+}
+
 /* Resume Button */
 .download-btn {
-    display: inline-block;
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
     color: #ffffff;
@@ -322,18 +328,12 @@ footer {
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 8px 15px rgba(0, 123, 255, 0.2);
     margin-top: 40px;
-
+    width: fit-content; /* Ensures it doesn't stretch */
 }
 
 .download-btn:hover {
     background-color: #005AFF;
     transform: translateY(-3px);
-}
-
-/* Resume Section */
-#resume {
-    text-align: center;
-    margin-bottom: 50px;
 }
 
 #resume h2{

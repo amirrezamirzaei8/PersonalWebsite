@@ -124,42 +124,62 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Initialize smooth transitions
     document.documentElement.style.transition = 'background-color 0.3s ease, color 0.3s ease';
-});
 
+    // Mobile menu functionality
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
 
-// Mobile menu functionality
-const menuToggle = document.querySelector('.mobile-menu-toggle');
-const sidebar = document.querySelector('.sidebar');
-const body = document.body;
+    menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+        body.classList.toggle('menu-open');
 
-menuToggle.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-    body.classList.toggle('menu-open');
+        // Toggle between burger and X icon
+        const icon = menuToggle.querySelector('i');
+        if (sidebar.classList.contains('active')) {
+            icon.classList.remove('fa-bars'); // Remove burger icon
+            icon.classList.add('fa-times'); // Add X icon
+        } else {
+            icon.classList.remove('fa-times'); // Remove X icon
+            icon.classList.add('fa-bars'); // Add burger icon
+        }
+    });
 
-    // Toggle between burger and X icon
-    const icon = menuToggle.querySelector('i');
-    if (sidebar.classList.contains('active')) {
-        icon.classList.remove('fa-bars'); // Remove burger icon
-        icon.classList.add('fa-times'); // Add X icon
-    } else {
-        icon.classList.remove('fa-times'); // Remove X icon
-        icon.classList.add('fa-bars'); // Add burger icon
-    }
-});
+    // Handle sidebar link clicks on mobile
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Check if it's an internal anchor link (starts with '#')
+            if (link.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1); // Remove the '#'
+                const targetSection = document.getElementById(targetId);
 
-// Close menu when clicking outside
-document.querySelector('.sidebar-overlay').addEventListener('click', () => {
-  sidebar.classList.remove('active');
-  body.classList.remove('menu-open');
-});
+                if (targetSection) {
+                    // Close the sidebar
+                    sidebar.classList.remove('active');
+                    body.classList.remove('menu-open');
 
-// Close menu when clicking outside
-document.querySelector('.sidebar-overlay').addEventListener('click', () => {
-    sidebar.classList.remove('active');
-    body.classList.remove('menu-open');
+                    // Reset the menu icon to burger
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
 
-    // Ensure the icon changes back to burger when closing the sidebar
-    const icon = menuToggle.querySelector('i');
-    icon.classList.remove('fa-times'); // Remove X icon
-    icon.classList.add('fa-bars'); // Add burger icon
+                    // Scroll to the target section
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            // External links (mailto, GitHub, LinkedIn) will proceed normally
+        });
+    });
+
+    // Close menu when clicking outside
+    document.querySelector('.sidebar-overlay').addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        body.classList.remove('menu-open');
+
+        // Ensure the icon changes back to burger when closing the sidebar
+        const icon = menuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    });
 });
